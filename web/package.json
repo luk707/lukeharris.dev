@@ -1,7 +1,8 @@
 {
   "private": "true",
   "scripts": {
-    "dev": "gatsby develop"
+    "dev": "gatsby develop",
+    "build": "gatsby build"
   },
   "dependencies": {
     "@types/react": "^17.0.3",
