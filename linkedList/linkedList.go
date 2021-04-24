@@ -22,7 +22,7 @@ func (head *LinkedList) String() string {
 	current := head
 	depth := 0
 	for current.Next != nil {
-		sb.WriteString(fmt.Sprintf("%v -> ", current.Value))
+		sb.WriteString(fmt.Sprintf("(%v) -> ", current.Value))
 		if d, ok := seen[current.Next]; ok {
 			if d == 0 {
 				sb.WriteString("HEAD")
@@ -35,7 +35,7 @@ func (head *LinkedList) String() string {
 		current = current.Next
 		depth++
 	}
-	sb.WriteString(fmt.Sprintf("%v", current.Value))
+	sb.WriteString(fmt.Sprintf("(%v)", current.Value))
 	return sb.String()
 }
 
