@@ -4,17 +4,8 @@ import (
 	"testing"
 
 	"lukeharris.dev/linkedList"
+	"lukeharris.dev/testUtils"
 )
-
-type TestUtils struct {
-	t *testing.T
-}
-
-func (u *TestUtils) StrEq(got, expected string) {
-	if got != expected {
-		u.t.Errorf("Got \"%s\", expected \"%s\"", got, expected)
-	}
-}
 
 func MakeList(length int) *linkedList.LinkedList {
 	var head *linkedList.LinkedList
@@ -25,7 +16,7 @@ func MakeList(length int) *linkedList.LinkedList {
 }
 
 func TestString(t *testing.T) {
-	utils := &TestUtils{t}
+	utils := &testUtils.TestUtils{T: t}
 
 	t1 := MakeList(3)
 	t1Expect := "1 -> 2 -> 3"
