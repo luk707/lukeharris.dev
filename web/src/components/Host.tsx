@@ -10,13 +10,24 @@ export const h4 = styled.h4(tw`font-bold font-mono`);
 
 export const p = styled.p(tw`mb-2`);
 
-export const code = (props) => {
-  console.log(props);
+export const ul = styled.ul(tw`list-disc pl-5`);
+
+export const code = styled.code(
+  tw`bg-red-50 text-red-900 p-px px-1 text-sm border-red-100 border rounded inline-block`
+);
+
+export const pre = (props) => {
+  const codeEl = props.children[0];
+  console.log(codeEl);
   return (
     <Highlight
       {...defaultProps}
-      code={props.children[0].replace(/\n$/, "")}
-      language={props.className.replace("language-", "")}
+      code={codeEl.props.children[0].replace(/\n$/, "")}
+      language={
+        codeEl.props.className
+          ? codeEl.props.className.replace("language-", "")
+          : undefined
+      }
       theme={theme}
     >
       {({ className, style, tokens, getLineProps, getTokenProps }) => (
