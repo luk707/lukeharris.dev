@@ -10,8 +10,7 @@ const HomePage: FC<PageProps> = ({ path }) => (
         content="lukeharris.dev git https://github.com/luk707/lukeharris.dev"
       />
     </Helmet>
-    <h1>Path:</h1>
-    <p>{path}</p>
+    <h1>lukeharris.dev</h1>
   </>
 );
 
