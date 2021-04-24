@@ -5,11 +5,13 @@ import (
 	"strings"
 )
 
+// Represents node of a linked list
 type LinkedList struct {
 	Value interface{}
 	Next  *LinkedList
 }
 
+// Formats the linked list as a string
 func (head *LinkedList) String() string {
 	var sb strings.Builder
 	current := head
@@ -25,6 +27,7 @@ func (head *LinkedList) String() string {
 	return sb.String()
 }
 
+// Returns tail node of linked list or returns nil if it is cyclical
 func (head *LinkedList) GetTail() *LinkedList {
 	current := head
 	for current.Next != nil {
@@ -36,10 +39,12 @@ func (head *LinkedList) GetTail() *LinkedList {
 	return current
 }
 
+// Returns true if list is cyclical
 func (head *LinkedList) IsCyclical() bool {
 	return head.GetTail() == nil
 }
 
+// Returns head of linked list containing values of a given array
 func New(arr []interface{}) *LinkedList {
 	var head *LinkedList
 
