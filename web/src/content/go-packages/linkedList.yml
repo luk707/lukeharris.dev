@@ -1,0 +1,5 @@
+name: LinkedList
+import: linkedList
+examples:
+  - title: Linked Lists
+    path: examples/linkedLists
