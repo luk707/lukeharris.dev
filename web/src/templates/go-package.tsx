@@ -11,7 +11,7 @@ const GoPackage: FC<PageProps<any>> = ({ data }) => {
       <Helmet>
         <meta
           name="go-import"
-          content={`lukeharris.dev/${importPath} git https://github.com/luk707/lukeharris.dev/${importPath}`}
+          content={`lukeharris.dev/${importPath} git https://github.com/luk707/lukeharris.dev`}
         />
       </Helmet>
       <h1>lukeharris.dev/{importPath}</h1>
