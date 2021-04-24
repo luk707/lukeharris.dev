@@ -29,10 +29,13 @@ export const pre = (props) => {
           : undefined
       }
       theme={theme}
-      tw="rounded p-2 mb-2 overflow-x-auto"
     >
       {({ className, style, tokens, getLineProps, getTokenProps }) => (
-        <pre className={className} style={style}>
+        <pre
+          className={className}
+          style={style}
+          tw="rounded overflow-x-auto p-2 mb-2"
+        >
           {tokens.map((line, i) => (
             <div {...getLineProps({ line, key: i })}>
               {line.map((token, key) => (
