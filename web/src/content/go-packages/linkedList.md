@@ -48,12 +48,12 @@ Examples:
 
 - Simple linked list without any cycles
 
-    `1 -> 2 -> 3`
+    `(1) -> (2) -> (3)`
 
 - Circular linked list where the tail precedes the head
 
-    `1 -> 2 -> 3 -> HEAD`
+    `(1) -> (2) -> (3) -> HEAD`
 
 - Circular linked list where the tail precedes the nth element after the head
 
-    `1 -> 2 -> 3 -> HEAD~n`
+    `(1) -> (2) -> (3) -> HEAD~n`
