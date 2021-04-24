@@ -56,16 +56,19 @@ func (head *LinkedList) String() string {
 
 // Returns tail node of linked list or returns nil if it is cyclical
 func (head *LinkedList) GetTail() *LinkedList {
-	seen := make(map[*LinkedList]void)
-	current := head
-	for current.Next != nil {
-		if _, ok := seen[current.Next]; ok {
+	c1 := head
+	c2 := head
+	for c1.Next != nil {
+		c1 = c1.Next
+		if c1.Next != nil {
+			c1 = c1.Next
+			c2 = c2.Next
+		}
+		if c1 == c2 {
 			return nil
 		}
-		seen[current] = member
-		current = current.Next
 	}
-	return current
+	return c1
 }
 
 // Returns true if list is cyclical
