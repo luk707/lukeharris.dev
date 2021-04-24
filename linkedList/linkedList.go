@@ -5,6 +5,10 @@ import (
 	"strings"
 )
 
+type void struct{}
+
+var member void
+
 // Represents node of a linked list
 type LinkedList struct {
 	Value interface{}
@@ -14,14 +18,22 @@ type LinkedList struct {
 // Formats the linked list as a string
 func (head *LinkedList) String() string {
 	var sb strings.Builder
+	seen := make(map[*LinkedList]int)
 	current := head
+	depth := 0
 	for current.Next != nil {
 		sb.WriteString(fmt.Sprintf("%v -> ", current.Value))
-		current = current.Next
-		if current == head {
-			sb.WriteString("HEAD")
+		if d, ok := seen[current.Next]; ok {
+			if d == 0 {
+				sb.WriteString("HEAD")
+				return sb.String()
+			}
+			sb.WriteString(fmt.Sprintf("HEAD~%d", d))
 			return sb.String()
 		}
+		seen[current] = depth
+		current = current.Next
+		depth++
 	}
 	sb.WriteString(fmt.Sprintf("%v", current.Value))
 	return sb.String()
@@ -29,11 +41,13 @@ func (head *LinkedList) String() string {
 
 // Returns tail node of linked list or returns nil if it is cyclical
 func (head *LinkedList) GetTail() *LinkedList {
+	seen := make(map[*LinkedList]void)
 	current := head
 	for current.Next != nil {
-		if current.Next == head {
+		if _, ok := seen[current.Next]; ok {
 			return nil
 		}
+		seen[current] = member
 		current = current.Next
 	}
 	return current
