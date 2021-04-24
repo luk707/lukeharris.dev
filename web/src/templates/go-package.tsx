@@ -1,29 +1,28 @@
 import React, { FC } from "react";
-import { PageProps, graphql } from "gatsby";
-import { Helmet } from "react-helmet";
+import { PageProps, graphql, Link } from "gatsby";
 
 const GoPackage: FC<PageProps<any>> = ({ data }) => {
   const {
-    goPackagesYaml: { import: importPath },
-  } = data;
+    html,
+    parent: { name },
+  } = data.markdownRemark;
   return (
     <>
-      <Helmet>
-        <meta
-          name="go-import"
-          content={`lukeharris.dev/${importPath} git https://github.com/luk707/lukeharris.dev`}
-        />
-      </Helmet>
-      <h1>lukeharris.dev/{importPath}</h1>
-      <pre>{JSON.stringify(data, null, 4)}</pre>
+      <Link to="/">lukeharris.dev</Link>
+      <div dangerouslySetInnerHTML={{ __html: html }} />
     </>
   );
 };
 
 export const query = graphql`
   query($id: String!) {
-    goPackagesYaml(id: { eq: $id }) {
-      import
+    markdownRemark(id: { eq: $id }) {
+      html
+      parent {
+        ... on File {
+          name
+        }
+      }
     }
   }
 `;

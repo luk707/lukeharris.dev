@@ -4,22 +4,37 @@ exports.createPages = async ({ graphql, actions }) => {
   const { createPage } = actions;
   const result = await graphql(`
     query {
-      allGoPackagesYaml {
+      allMarkdownRemark {
         edges {
           node {
             id
-            import
+            html
+            parent {
+              ... on File {
+                name
+                relativePath
+              }
+            }
           }
         }
       }
     }
   `);
 
-  result.data.allGoPackagesYaml.edges.forEach(({ node }) => {
-    createPage({
-      path: node.import,
-      component: path.resolve(`./src/templates/go-package.tsx`),
-      context: node,
-    });
+  result.data.allMarkdownRemark.edges.forEach(({ node }) => {
+    const [type] = node.parent.relativePath.split("/");
+    switch (type) {
+      case "go-packages":
+        createPage({
+          path: node.parent.name,
+          component: path.resolve(`./src/templates/go-package.tsx`),
+          context: {
+            id: node.id,
+          },
+        });
+        return;
+      default:
+        return;
+    }
   });
 };
