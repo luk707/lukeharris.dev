@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import tw from "twin.macro";
 import Highlight, { defaultProps } from "prism-react-renderer";
-import theme from "prism-react-renderer/themes/github";
+import theme from "prism-react-renderer/themes/nightOwlLight";
 
 export const h1 = styled.h1(tw`font-black text-3xl mb-5`);
 export const h2 = styled.h2(tw`font-bold text-2xl mb-2`);
@@ -29,9 +29,10 @@ export const pre = (props) => {
           : undefined
       }
       theme={theme}
+      tw="rounded p-2 mb-2 overflow-x-auto"
     >
       {({ className, style, tokens, getLineProps, getTokenProps }) => (
-        <pre className={className} style={style} tw="rounded p-2 mb-2">
+        <pre className={className} style={style}>
           {tokens.map((line, i) => (
             <div {...getLineProps({ line, key: i })}>
               {line.map((token, key) => (
