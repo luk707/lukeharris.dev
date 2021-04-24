@@ -2,6 +2,8 @@ import React, { FC } from "react";
 import { PageProps, useStaticQuery, graphql, Link } from "gatsby";
 import { Helmet } from "react-helmet";
 
+import Layout from "../components/Layout";
+
 const HomePage: FC<PageProps> = ({ path }) => {
   const data = useStaticQuery(graphql`
     query {
@@ -21,7 +23,7 @@ const HomePage: FC<PageProps> = ({ path }) => {
     }
   `);
   return (
-    <>
+    <Layout>
       <Helmet>
         <meta
           name="go-import"
@@ -47,7 +49,7 @@ const HomePage: FC<PageProps> = ({ path }) => {
           );
         })}
       </ul>
-    </>
+    </Layout>
   );
 };
 

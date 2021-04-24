@@ -1,16 +1,18 @@
 import React, { FC } from "react";
 import { PageProps, graphql, Link } from "gatsby";
 
+import Layout from "../components/Layout";
+
 const GoPackage: FC<PageProps<any>> = ({ data }) => {
   const {
     html,
     parent: { name },
   } = data.markdownRemark;
   return (
-    <>
+    <Layout>
       <Link to="/">lukeharris.dev</Link>
       <div dangerouslySetInnerHTML={{ __html: html }} />
-    </>
+    </Layout>
   );
 };
 

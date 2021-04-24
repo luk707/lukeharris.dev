@@ -3,6 +3,7 @@ module.exports = {
     title: `Luke Harris`,
   },
   plugins: [
+    `gatsby-plugin-styled-components`,
     `gatsby-plugin-react-helmet`,
     `gatsby-transformer-remark`,
     {
