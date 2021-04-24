@@ -5,10 +5,6 @@ import (
 	"strings"
 )
 
-type void struct{}
-
-var member void
-
 // Represents node of a linked list
 type LinkedList struct {
 	Value interface{}
