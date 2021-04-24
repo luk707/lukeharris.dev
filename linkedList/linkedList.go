@@ -1,4 +1,4 @@
-package linkedList
+package linkedList /* import "lukeharris.dev/linkedList" */
 
 import (
 	"fmt"
