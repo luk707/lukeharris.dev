@@ -9,10 +9,16 @@
 
 ```go
 type TestUtils struct {
-	T *testing.T
 }
 ```
 
+
+#### func  Setup
+
+```go
+func Setup(t *testing.T) *TestUtils
+```
+Returns pointer to new TestUtils instance
 
 #### func (*TestUtils) BoolEq
 

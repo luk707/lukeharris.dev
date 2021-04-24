@@ -16,7 +16,7 @@ func MakeList(length int) *linkedList.LinkedList {
 }
 
 func TestString(t *testing.T) {
-	utils := &testUtils.TestUtils{T: t}
+	utils := testUtils.Setup(t)
 
 	t1 := MakeList(3)
 	t1Expect := "1 -> 2 -> 3"
@@ -37,7 +37,7 @@ func TestString(t *testing.T) {
 }
 
 func TestIsCyclical(t *testing.T) {
-	utils := &testUtils.TestUtils{T: t}
+	utils := testUtils.Setup(t)
 
 	t1 := MakeList(3)
 	t1.GetTail().Next = t1
@@ -58,7 +58,7 @@ func TestIsCyclical(t *testing.T) {
 }
 
 func TestGetTail(t *testing.T) {
-	utils := &testUtils.TestUtils{T: t}
+	utils := testUtils.Setup(t)
 
 	t1 := MakeList(3)
 	t1.GetTail().Next = t1
