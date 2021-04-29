@@ -2,7 +2,8 @@ import React from "react";
 import styled from "styled-components";
 import tw from "twin.macro";
 import Highlight, { defaultProps } from "prism-react-renderer";
-import theme from "prism-react-renderer/themes/nightOwlLight";
+import duotoneDarkTheme from "prism-react-renderer/themes/dracula";
+import nightOwlLightTheme from "prism-react-renderer/themes/nightOwlLight";
 
 export const h1 = styled.h1(tw`font-black text-3xl mb-5`);
 export const h2 = styled.h2(tw`font-bold text-2xl mb-2`);
@@ -18,7 +19,6 @@ export const code = styled.code(
 
 export const pre = (props) => {
   const codeEl = props.children[0];
-  console.log(codeEl);
   return (
     <Highlight
       {...defaultProps}
@@ -28,7 +28,11 @@ export const pre = (props) => {
           ? codeEl.props.className.replace("language-", "")
           : undefined
       }
-      theme={theme}
+      theme={
+        codeEl.props.className == "language-sh"
+          ? duotoneDarkTheme
+          : nightOwlLightTheme
+      }
     >
       {({ className, style, tokens, getLineProps, getTokenProps }) => (
         <pre
