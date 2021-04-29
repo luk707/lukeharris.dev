@@ -81,3 +81,13 @@ func New(arr []interface{}) *LinkedList {
 	}
 	return head
 }
+
+// Creates new head node with value for a given linked list
+func Push(head **LinkedList, data interface{}) {
+	*head = &LinkedList{Value: data, Next: *head}
+}
+
+// Creates a new node after a given node
+func (head *LinkedList) Insert(data interface{}) {
+	head.Next = &LinkedList{Value: data, Next: head.Next}
+}

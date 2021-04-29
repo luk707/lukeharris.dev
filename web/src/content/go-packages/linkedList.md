@@ -5,6 +5,13 @@
 
 ## Usage
 
+#### func  Push
+
+```go
+func Push(head **LinkedList, data interface{})
+```
+Creates new head node with value for a given linked list
+
 #### type LinkedList
 
 ```go
@@ -29,6 +36,13 @@ Returns head of linked list containing values of a given array
 func (head *LinkedList) GetTail() *LinkedList
 ```
 Returns tail node of linked list or returns nil if it is cyclical
+
+#### func (*LinkedList) Insert
+
+```go
+func (head *LinkedList) Insert(data interface{})
+```
+Creates a new node after a given node
 
 #### func (*LinkedList) IsCyclical
 

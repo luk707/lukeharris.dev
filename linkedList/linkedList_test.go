@@ -93,3 +93,44 @@ func TestNew(t *testing.T) {
 	t3Got := t3.String()
 	utils.StrEq(t3Got, t3Expect)
 }
+
+func TestPush(t *testing.T) {
+	utils := testUtils.Setup(t)
+
+	t1 := linkedList.New([]interface{}{2, 3})
+	linkedList.Push(&t1, 1)
+	t1Expect := "(1) -> (2) -> (3)"
+	t1Got := t1.String()
+	utils.StrEq(t1Got, t1Expect)
+
+	t2 := linkedList.New([]interface{}{2, 3, 4})
+	t2.GetTail().Next = t2
+	linkedList.Push(&t2, 1)
+	t2Expect := "(1) -> (2) -> (3) -> (4) -> HEAD~1"
+	t2Got := t2.String()
+	utils.StrEq(t2Got, t2Expect)
+}
+
+func TestInsert(t *testing.T) {
+	utils := testUtils.Setup(t)
+
+	t1 := linkedList.New([]interface{}{1, 3})
+	t1.Insert(2)
+	t1Expect := "(1) -> (2) -> (3)"
+	t1Got := t1.String()
+	utils.StrEq(t1Got, t1Expect)
+
+	t2 := linkedList.New([]interface{}{1, 3, 4})
+	t2.GetTail().Next = t2
+	t2.Insert(2)
+	t2Expect := "(1) -> (2) -> (3) -> (4) -> HEAD"
+	t2Got := t2.String()
+	utils.StrEq(t2Got, t2Expect)
+
+	t3 := linkedList.New([]interface{}{1, 3, 4})
+	t3.GetTail().Next = t3.Next
+	t3.Insert(2)
+	t3Expect := "(1) -> (2) -> (3) -> (4) -> HEAD~2"
+	t3Got := t3.String()
+	utils.StrEq(t3Got, t3Expect)
+}
