@@ -6,9 +6,9 @@ import (
 )
 
 // Represents node of a linked list
-type LinkedList struct {
-	Value interface{}
-	Next  *LinkedList
+type Node struct {
+	Data interface{}
+	Next *Node
 }
 
 /*
@@ -27,13 +27,13 @@ Examples:
   `(1) -> (2) -> (3) -> HEAD~n`
 
 */
-func (head *LinkedList) String() string {
+func (head *Node) String() string {
 	var sb strings.Builder
-	seen := make(map[*LinkedList]int)
+	seen := make(map[*Node]int)
 	current := head
 	depth := 0
 	for current.Next != nil {
-		sb.WriteString(fmt.Sprintf("(%v) -> ", current.Value))
+		sb.WriteString(fmt.Sprintf("(%v) -> ", current.Data))
 		if d, ok := seen[current.Next]; ok {
 			if d == 0 {
 				sb.WriteString("HEAD")
@@ -46,12 +46,12 @@ func (head *LinkedList) String() string {
 		current = current.Next
 		depth++
 	}
-	sb.WriteString(fmt.Sprintf("(%v)", current.Value))
+	sb.WriteString(fmt.Sprintf("(%v)", current.Data))
 	return sb.String()
 }
 
 // Returns tail node of linked list or returns nil if it is cyclical
-func (head *LinkedList) GetTail() *LinkedList {
+func (head *Node) GetTail() *Node {
 	c1 := head
 	c2 := head
 	for c1.Next != nil {
@@ -68,26 +68,26 @@ func (head *LinkedList) GetTail() *LinkedList {
 }
 
 // Returns true if list is cyclical
-func (head *LinkedList) IsCyclical() bool {
+func (head *Node) IsCyclical() bool {
 	return head.GetTail() == nil
 }
 
 // Returns head of linked list containing values of a given array
-func New(arr []interface{}) *LinkedList {
-	var head *LinkedList
+func New(arr []interface{}) *Node {
+	var head *Node
 
 	for i := len(arr) - 1; i >= 0; i-- {
-		head = &LinkedList{arr[i], head}
+		head = &Node{arr[i], head}
 	}
 	return head
 }
 
 // Creates new head node with value for a given linked list
-func Push(head **LinkedList, data interface{}) {
-	*head = &LinkedList{Value: data, Next: *head}
+func Push(head **Node, data interface{}) {
+	*head = &Node{Data: data, Next: *head}
 }
 
 // Creates a new node after a given node
-func (head *LinkedList) Insert(data interface{}) {
-	head.Next = &LinkedList{Value: data, Next: head.Next}
+func (head *Node) Insert(data interface{}) {
+	head.Next = &Node{Data: data, Next: head.Next}
 }

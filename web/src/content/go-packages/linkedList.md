@@ -8,16 +8,16 @@
 #### func  Push
 
 ```go
-func Push(head **LinkedList, data interface{})
+func Push(head **Node, data interface{})
 ```
 Creates new head node with value for a given linked list
 
-#### type LinkedList
+#### type Node
 
 ```go
-type LinkedList struct {
-	Value interface{}
-	Next  *LinkedList
+type Node struct {
+	Data interface{}
+	Next *Node
 }
 ```
 
@@ -26,35 +26,35 @@ Represents node of a linked list
 #### func  New
 
 ```go
-func New(arr []interface{}) *LinkedList
+func New(arr []interface{}) *Node
 ```
 Returns head of linked list containing values of a given array
 
-#### func (*LinkedList) GetTail
+#### func (*Node) GetTail
 
 ```go
-func (head *LinkedList) GetTail() *LinkedList
+func (head *Node) GetTail() *Node
 ```
 Returns tail node of linked list or returns nil if it is cyclical
 
-#### func (*LinkedList) Insert
+#### func (*Node) Insert
 
 ```go
-func (head *LinkedList) Insert(data interface{})
+func (head *Node) Insert(data interface{})
 ```
 Creates a new node after a given node
 
-#### func (*LinkedList) IsCyclical
+#### func (*Node) IsCyclical
 
 ```go
-func (head *LinkedList) IsCyclical() bool
+func (head *Node) IsCyclical() bool
 ```
 Returns true if list is cyclical
 
-#### func (*LinkedList) String
+#### func (*Node) String
 
 ```go
-func (head *LinkedList) String() string
+func (head *Node) String() string
 ```
 Formats the linked list as a string
 

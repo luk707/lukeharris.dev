@@ -7,10 +7,10 @@ import (
 	"lukeharris.dev/testUtils"
 )
 
-func MakeList(length int) *linkedList.LinkedList {
-	var head *linkedList.LinkedList
+func MakeList(length int) *linkedList.Node {
+	var head *linkedList.Node
 	for i := length; i > 0; i-- {
-		head = &linkedList.LinkedList{i, head}
+		head = &linkedList.Node{i, head}
 	}
 	return head
 }
