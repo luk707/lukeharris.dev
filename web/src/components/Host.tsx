@@ -7,7 +7,7 @@ import nightOwlLightTheme from "prism-react-renderer/themes/nightOwlLight";
 
 export const h1 = styled.h1(tw`font-black text-3xl mb-5`);
 export const h2 = styled.h2(tw`font-bold text-2xl mb-2`);
-export const h4 = styled.h4(tw`font-bold font-mono`);
+export const h4 = styled.h4(tw`font-bold font-mono mb-2`);
 
 export const p = styled.p(tw`mb-2`);
 
@@ -38,7 +38,7 @@ export const pre = (props) => {
         <pre
           className={className}
           style={style}
-          tw="rounded overflow-x-auto p-2 mb-2"
+          tw="border-black border-opacity-5 border rounded overflow-x-auto p-3 mb-2"
         >
           {tokens.map((line, i) => (
             <div {...getLineProps({ line, key: i })}>
