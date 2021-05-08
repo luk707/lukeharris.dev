@@ -3,8 +3,9 @@ import { PageProps, useStaticQuery, graphql, Link } from "gatsby";
 import { Helmet } from "react-helmet";
 import "twin.macro";
 
-import Layout from "../components/Layout";
+import { Header } from "../components/Header";
 import { h2 as H2 } from "../components/Host";
+import Layout from "../components/Layout";
 
 const HomePage: FC<PageProps> = ({ path }) => {
   const data = useStaticQuery(graphql`
@@ -32,7 +33,7 @@ const HomePage: FC<PageProps> = ({ path }) => {
           content="lukeharris.dev git https://github.com/luk707/lukeharris.dev"
         />
       </Helmet>
-      <h1 tw="text-xl my-6 inline-block">lukeharris.dev</h1>
+      <Header />
       <H2>About me</H2>
       <ul tw="mb-4">
         <li>👨‍💻 Pronouns: He / Him</li>

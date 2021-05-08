@@ -3,8 +3,9 @@ import { PageProps, graphql, Link } from "gatsby";
 import RehypeReact from "rehype-react";
 import "twin.macro";
 
-import Layout from "../components/Layout";
 import * as components from "../components/Host";
+import { Header } from "../components/Header";
+import Layout from "../components/Layout";
 
 const renderAst = new RehypeReact({
   createElement: React.createElement,
@@ -18,9 +19,7 @@ const GoPackage: FC<PageProps<any>> = ({ data }) => {
   } = data.markdownRemark;
   return (
     <Layout>
-      <Link to="/" tw="text-xl my-6 inline-block">
-        ← lukeharris.dev
-      </Link>
+      <Header />
       {renderAst(htmlAst)}
     </Layout>
   );
