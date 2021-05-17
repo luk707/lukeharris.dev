@@ -87,9 +87,9 @@ export const Header = () => {
               </a>
             ))}
 
-            <a href="#" tw="font-medium text-indigo-600 hover:text-indigo-500">
+            {/* <a href="#" tw="font-medium text-indigo-600 hover:text-indigo-500">
               Log in
-            </a>
+            </a> */}
           </div>
         </nav>
       </div>
@@ -136,12 +136,12 @@ export const Header = () => {
               </a>
             ))}
           </div>
-          <a
+          {/* <a
             href="#"
             tw="block w-full px-5 py-3 text-center font-medium text-indigo-600 bg-gray-50 hover:bg-gray-100"
           >
             Log in
-          </a>
+          </a> */}
         </div>
       </MobileMenu>
     </>
