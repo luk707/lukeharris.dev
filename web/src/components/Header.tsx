@@ -9,18 +9,18 @@ const LOGO = `data:image/svg+xml;charset=UTF-8,%3csvg width='35' height='32' xml
 )}' fill-rule='nonzero'/%3e%3c/svg%3e`;
 
 const CONTENT = [
-  {
-    title: "Blog",
-    to: "#blog",
-  },
-  {
-    title: "Projects",
-    to: "#projects",
-  },
-  {
-    title: "Career",
-    to: "#career",
-  },
+  // {
+  //   title: "Blog",
+  //   to: "#blog",
+  // },
+  // {
+  //   title: "Projects",
+  //   to: "#projects",
+  // },
+  // {
+  //   title: "Career",
+  //   to: "#career",
+  // },
 ];
 
 const MobileMenu = styled.div(
