@@ -27,6 +27,13 @@ func (u *TestUtils) BoolEq(got, expected bool)
 ```
 Asserts if booleans are equal
 
+#### func (*TestUtils) BytesEq
+
+```go
+func (u *TestUtils) BytesEq(got, expected []byte)
+```
+Asserts if bytes are equal
+
 #### func (*TestUtils) IsNil
 
 ```go

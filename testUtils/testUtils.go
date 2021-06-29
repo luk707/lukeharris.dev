@@ -1,6 +1,7 @@
 package testUtils /* import "lukeharris.dev/testUtils" */
 
 import (
+	"bytes"
 	"reflect"
 	"testing"
 )
@@ -39,5 +40,12 @@ func (u *TestUtils) IsNil(got interface{}) {
 func (u *TestUtils) IsNotNil(got interface{}) {
 	if reflect.ValueOf(got).IsNil() {
 		u.t.Error("Got nil, expected non-nil value", got)
+	}
+}
+
+// Asserts if bytes are equal
+func (u *TestUtils) BytesEq(got, expected []byte) {
+	if !bytes.Equal(got, expected) {
+		u.t.Errorf("Got %b, expected %b", got, expected)
 	}
 }
