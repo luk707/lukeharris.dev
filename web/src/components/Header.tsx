@@ -9,19 +9,21 @@ const LOGO = `data:image/svg+xml;charset=UTF-8,%3csvg width='35' height='32' xml
 )}' fill-rule='nonzero'/%3e%3c/svg%3e`;
 
 const CONTENT = [
-  // {
-  //   title: "Blog",
-  //   to: "#blog",
-  // },
-  // {
-  //   title: "Projects",
-  //   to: "#projects",
-  // },
-  // {
-  //   title: "Career",
-  //   to: "#career",
-  // },
+  {
+    title: "Portfolio",
+    to: "https://lukeharris.dev",
+  },
+  {
+    title: "Github",
+    to: "https://github.com/luk707",
+  },
+  {
+    title: "Twitter",
+    to: "https://twitter.com/_lukeharris",
+  },
 ];
+
+const CONTACT_URL = "https://www.polywork.com/lukeharris/contact";
 
 const MobileMenu = styled.div(
   tw`absolute top-0 inset-x-0 p-2 transition transform origin-top-right sm:hidden`,
@@ -65,9 +67,9 @@ export const Header = () => {
                     aria-hidden="true"
                   >
                     <path
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      stroke-width="2"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth="2"
                       d="M4 6h16M4 12h16M4 18h16"
                     />
                   </svg>
@@ -87,9 +89,12 @@ export const Header = () => {
               </a>
             ))}
 
-            {/* <a href="#" tw="font-medium text-indigo-600 hover:text-indigo-500">
-              Log in
-            </a> */}
+            <a
+              href={CONTACT_URL}
+              tw="font-medium text-indigo-600 hover:text-indigo-500"
+            >
+              Contact
+            </a>
           </div>
         </nav>
       </div>
@@ -136,12 +141,12 @@ export const Header = () => {
               </a>
             ))}
           </div>
-          {/* <a
-            href="#"
+          <a
+            href={CONTACT_URL}
             tw="block w-full px-5 py-3 text-center font-medium text-indigo-600 bg-gray-50 hover:bg-gray-100"
           >
-            Log in
-          </a> */}
+            Contact
+          </a>
         </div>
       </MobileMenu>
     </>

@@ -1,4 +1,4 @@
-package testUtils /* import "lukeharris.dev/testUtils" */
+package testUtils /* import "go.lukeharris.dev/testUtils" */
 
 import (
 	"bytes"

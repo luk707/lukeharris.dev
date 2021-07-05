@@ -1,7 +1,7 @@
 #!/bin/bash
 
-declare -a GoPackages=("linkedList" "r30" "testUtils")
+declare -a Packages=("linkedList" "r30" "testUtils")
 
-for GoPackage in ${GoPackages[@]}; do
-   ../../bin/godocdown lukeharris.dev/$GoPackage > web/src/content/go-packages/$GoPackage.md
+for Package in ${Packages[@]}; do
+   ../../bin/godocdown go.lukeharris.dev/$GoPackage > web/src/content/packages/$Package.md
 done

@@ -7,7 +7,7 @@ import (
 	"image/png"
 	"os"
 
-	"lukeharris.dev/r30"
+	"go.lukeharris.dev/r30"
 )
 
 func main() {

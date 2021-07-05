@@ -1,6 +1,6 @@
 # testUtils
 --
-    import "lukeharris.dev/testUtils"
+    import "go.lukeharris.dev/testUtils"
 
 
 ## Usage

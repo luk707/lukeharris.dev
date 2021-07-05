@@ -24,10 +24,10 @@ exports.createPages = async ({ graphql, actions }) => {
   result.data.allMarkdownRemark.edges.forEach(({ node }) => {
     const [type] = node.parent.relativePath.split("/");
     switch (type) {
-      case "go-packages":
+      case "packages":
         createPage({
           path: node.parent.name,
-          component: path.resolve(`./src/templates/go-package.tsx`),
+          component: path.resolve(`./src/templates/packages.tsx`),
           context: {
             id: node.id,
           },

@@ -34,15 +34,7 @@ const HomePage: FC<PageProps> = ({ path }) => {
         />
       </Helmet>
       <Header />
-      <H2>About me</H2>
-      <ul tw="mb-4">
-        <li>👨‍💻 Pronouns: He / Him</li>
-        <li>🔭 I’m currently working on super secret work things</li>
-        <li>🌱 I’m learning C/C++ &amp; Rust</li>
-        <li>📫 Reach me on twitter @_lukeharris</li>
-        <li>🎹 I mess around with audio synthesis in my spare time</li>
-      </ul>
-      <H2>Go packages</H2>
+      <H2>Packages</H2>
       <ul tw="list-disc pl-5">
         {data.allMarkdownRemark.edges.map(({ node }) => {
           const {
@@ -50,7 +42,7 @@ const HomePage: FC<PageProps> = ({ path }) => {
             parent: { name, relativePath },
           } = node;
           const [type] = relativePath.split("/");
-          if (type !== "go-packages") {
+          if (type !== "packages") {
             return null;
           }
           return (

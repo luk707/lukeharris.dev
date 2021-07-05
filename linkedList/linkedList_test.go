@@ -3,8 +3,8 @@ package linkedList_test
 import (
 	"testing"
 
-	"lukeharris.dev/linkedList"
-	"lukeharris.dev/testUtils"
+	"go.lukeharris.dev/linkedList"
+	"go.lukeharris.dev/testUtils"
 )
 
 func MakeList(length int) *linkedList.Node {

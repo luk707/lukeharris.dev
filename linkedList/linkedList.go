@@ -1,4 +1,4 @@
-package linkedList /* import "lukeharris.dev/linkedList" */
+package linkedList /* import "go.lukeharris.dev/linkedList" */
 
 import (
 	"fmt"

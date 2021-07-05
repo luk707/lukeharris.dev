@@ -1,6 +1,6 @@
 # linkedList
 --
-    import "lukeharris.dev/linkedList"
+    import "go.lukeharris.dev/linkedList"
 
 
 ## Usage

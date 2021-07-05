@@ -1,4 +1,4 @@
-package r30 /* import "lukeharris.dev/r30" */
+package r30 /* import "go.lukeharris.dev/r30" */
 
 func shiftRight(data []byte) []byte {
 	carry := data[len(data)-1] & 0b1 << 7

@@ -3,8 +3,8 @@ package r30_test
 import (
 	"testing"
 
-	"lukeharris.dev/r30"
-	"lukeharris.dev/testUtils"
+	"go.lukeharris.dev/r30"
+	"go.lukeharris.dev/testUtils"
 )
 
 func TestStep(t *testing.T) {
