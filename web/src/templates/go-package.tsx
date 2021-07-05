@@ -7,7 +7,7 @@ import * as components from "../components/Host";
 import { Header } from "../components/Header";
 import Layout from "../components/Layout";
 
-const renderAst = new RehypeReact({
+const renderAst = new (RehypeReact as any)({
   createElement: React.createElement,
   components,
 }).Compiler;
